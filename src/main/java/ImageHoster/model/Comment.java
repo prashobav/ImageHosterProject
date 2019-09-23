@@ -3,13 +3,19 @@ package ImageHoster.model;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
+import javax.persistence.Table;
+//@Entity annotation specifies that the corresponding class is a JPA entity
+@Entity
+//@Table annotation provides more options to customize the mapping.
+//Here the name of the table to be created in the database is explicitly mentioned as 'comments'. Hence the table named 'images' will be created in the database with all the columns mapped to all the attributes in 'Image' class
+@Table(name = "comments")
 public class Comment {
 	//@Id annotation specifies that the corresponding attribute is a primary key
     @Id
@@ -56,12 +62,12 @@ public class Comment {
     //One Comment can have only one user (owner) but one user can have multiple comments
     //FetchType is EAGER
     @ManyToOne(fetch = FetchType.EAGER)
-    //Below annotation indicates that the name of the column in 'comments' table referring the primary key in 'users' table will be 'user_id'
+    //Below annotation indicates that the name of the column in 'comments' table referring the primary key in 'Users' table will be 'user_id'
     @JoinColumn(name = "user_id")
     private User user;
-    
+  //Below annotation indicates that the name of the column in 'comments' table referring the primary key in 'Image' table will be 'imageid'
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "imageId")
     private Image image;
 	 
 	 

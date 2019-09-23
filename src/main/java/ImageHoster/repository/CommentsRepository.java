@@ -5,8 +5,10 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceUnit;
 
-import ImageHoster.model.Comment;
+import org.springframework.stereotype.Repository;
 
+import ImageHoster.model.Comment;
+@Repository
 public class CommentsRepository {
 	 @PersistenceUnit(unitName = "imageHoster")
 	    private EntityManagerFactory emf;
