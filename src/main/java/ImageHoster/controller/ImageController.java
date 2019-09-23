@@ -52,7 +52,7 @@ public class ImageController {
     	 Comment comment = new Comment();
         model.addAttribute("image", image);
         model.addAttribute("tags", image.getTags());
-        model.addAttribute("comments",comment.getText());
+        model.addAttribute("comments",comment.getUser());
         return "images/image";
     }
 

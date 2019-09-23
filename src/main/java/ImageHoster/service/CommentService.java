@@ -10,8 +10,8 @@ public class CommentService {
 	 @Autowired
 	  private  CommentsRepository commentsRepository;
 	 
-	 public void addComment(Comment comment) {
+	 public Comment addComment(Comment comment) {
 	    	System.out.println("inside comments service : add comment");
-	    	commentsRepository.addComment(comment);
+	    	return commentsRepository.addComment(comment);
 	    }
 }

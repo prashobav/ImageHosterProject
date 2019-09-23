@@ -12,18 +12,18 @@ import ImageHoster.model.Comment;
 public class CommentsRepository {
 	 @PersistenceUnit(unitName = "imageHoster")
 	    private EntityManagerFactory emf;
-	public Comment addComment(Comment comment) {
+	public Comment addComment(Comment newComment) {
 		System.out.println("inside comments repository : add comment");
 		        EntityManager em = emf.createEntityManager();
 		        EntityTransaction transaction = em.getTransaction();
 
 		        try {
 		            transaction.begin();
-		            em.persist(comment);
+		            em.persist(newComment);
 		            transaction.commit();
 		        } catch (Exception e) {
 		            transaction.rollback();
 		        }
-		        return comment;
+		        return newComment;
 		    }
 }

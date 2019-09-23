@@ -58,11 +58,7 @@ public class UserService {
 	   if (regex.matcher(user.getPassword()).find()) {
 		   spChar = true;
 	   } 
-	   /*for (int i = 0; i < user.getPassword().length() - 1; i++){
-        if (specialCharacters.contains(user.getPassword().toString()))
-        {
-            spChar = true;
-        }}*/
+	   
        	
   System.out.println(alpha + " " + isDigit +" "+ spChar);       
 return (alpha && isDigit && spChar);
